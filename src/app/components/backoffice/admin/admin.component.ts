@@ -18,7 +18,6 @@ export class AdminComponent {
       console.log("admin name:" + this.adminName);
     });
     
-    
   }
   getAdminName(){
     return this.adminName;

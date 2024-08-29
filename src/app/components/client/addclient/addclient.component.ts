@@ -82,7 +82,7 @@ addClient() {
           icon: 'success',
           title: 'Added successfully'
         });
-        this.rt.navigate(['/getclient']);
+        this.rt.navigate(['admin/Client']);
       },
       error: (error) => {
         console.error("Error adding client:", error); // Gestion des erreurs

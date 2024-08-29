@@ -46,6 +46,10 @@ onFileSelected(event: Event) {
     this.selectedFile = fileInput.files[0];
   }
 }
+logOut(){
+  this.adminservice.logout();
+  this.router.navigate(['/login']);
+}
 addAdmin() {
   if (this.adminform.valid && this.selectedFile) {
     const newAdmin: Admin = this.adminform.value as Admin;

@@ -58,6 +58,10 @@ export class GetchauffeursComponent {
       }
     });
   }
+  logOut(){
+    this.chauffeurservice.logout();
+    this.router.navigate(['/login']);
+  }
   updateChauffeur(chaufId: number) {
     this.chauffeurservice.getChaufById(chaufId).subscribe(
       (chauf) => {

@@ -23,7 +23,10 @@ export class GetAdminComponent {
     console.log(this.AdminTab);
     this.getadmins();
   }
-  
+  logOut(){
+    this.Adminservice.logout();
+    this.router.navigate(['/login']);
+  }
   getadmins(){
     this.Adminservice.getadmins().subscribe((response)=>{
       this.AdminTab = response;

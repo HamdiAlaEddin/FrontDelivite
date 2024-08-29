@@ -56,6 +56,10 @@ export class GetRestoComponent {
       }
     });
   }
+  logOut(){
+    this.Restoservice.logout();
+    this.router.navigate(['/login']);
+  }
   updateResto(Id: number) {
     this.Restoservice.getRestoById(Id).subscribe(
         (rees) => {

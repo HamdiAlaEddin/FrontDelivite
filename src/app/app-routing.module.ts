@@ -52,20 +52,14 @@ const routes: Routes = [
   { path: 'register-resto', component: RegisterRestoComponent },
   {path:'admin/addClient', component:AddclientComponent},
   {path:'admin/Client', component:GetclientComponent},
-  
-  {path:'addChauffeur', component:AddchauffeurComponent},
-  {path:'getchauffeur', component:GetchauffeursComponent},
-
-
-  {path:'addAdmin', component:AddAdminComponent},
-  {path:'getAdmin', component:GetAdminComponent},
-
+  {path:'admin/addDriver', component:AddchauffeurComponent},
+  {path:'admin/Drivers', component:GetchauffeursComponent},
+  {path:'admin/addAdmin', component:AddAdminComponent},
+  {path:'admin/Admin', component:GetAdminComponent},
   {path:'admin/addVehicule', component:AddVehiculeComponent},
   {path:'admin/getVehicule', component:GetvehiculeComponent},
-
-  {path:'addRestaurant', component:AddRestaurantComponent},
-  {path:'getRestaurants', component:GetRestoComponent},
-
+  {path:'admin/addRestaurant', component:AddRestaurantComponent},
+  {path:'admin/Restaurants', component:GetRestoComponent},
   {path:'getOrders', component:GetLivraisonComponent},
 //test pour l admin
 //{path:'admin', component:AdminComponent},
