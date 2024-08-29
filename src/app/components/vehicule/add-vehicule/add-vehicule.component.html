@@ -1,0 +1,88 @@
+<!-- app.component.html -->
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <!-- Sidebar -->
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-5 d-none d-sm-inline">Menu</span>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Clients</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                <li><a class="dropdown-item" routerLink="/admin/addClient">Add Client</a></li>
+                <li><a class="dropdown-item" routerLink="/admin/Client">show Clients</a></li>
+              </ul>
+            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Vehicule</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                <li><a class="dropdown-item" routerLink="/admin/addVehicule">Add Vehicule</a></li>
+                <li><a class="dropdown-item" routerLink="/admin/getVehicule">show Vehicules</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Ajoutez d'autres éléments de menu ici -->
+       
+        <hr>
+        <div class="dropdown pb-4">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+            <span class="d-none d-sm-inline mx-1">User</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logOut()">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <div class="container">
+    <!-- ********************************************************************************************** -->
+    <div class="text-center">
+        <div class="col-md-8 col-sm-12" style="margin: auto;">				                
+            <div class="well" > 
+                <h1 class="mt-5">ADD VEHICULE</h1>
+   <!-- src/app/components/add-vehicule/add-vehicule.component.html -->
+<!-- src/app/components/add-vehicule/add-vehicule.component.html -->
+<form [formGroup]="vehiculeForm" (ngSubmit)="onSubmit()" class="vehicule-form">
+    <div class="form-group">
+      <label for="marque">Marque:</label>
+      <input id="marque" formControlName="marque" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="modele">Modèle:</label>
+      <input id="modele" formControlName="modele" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="immatriculation">Immatriculation:</label>
+      <input id="immatriculation" formControlName="immatriculation" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select id="type" formControlName="type" class="form-control">
+        <option *ngFor="let type of typeVehiculeOptions" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="couleur">Couleur:</label>
+      <input id="couleur" formControlName="couleur" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="vehiculeForm.invalid">Ajouter Véhicule</button>
+  </form>
+  
+  
+</div>
+    
+    
+    <!-- ******************************************************************** -->
+    
+    

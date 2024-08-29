@@ -1,0 +1,34 @@
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+
+  
+  .container {
+    position: absolute; /* Positionner les cartes sur l'image */
+    bottom: 30px; /* Espacement depuis le bas de la page */
+    left: 50%;
+    transform: translateX(-50%); /* Centrer les cartes horizontalement */
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center; /* Centrer les cartes horizontalement */
+  }
+  
+  .card {
+    margin: 28px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent pour les cartes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px; /* Ajuster la hauteur de l'image dans la carte */
+    object-fit: cover;
+  }
+  

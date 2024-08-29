@@ -1,0 +1,129 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<!-- app.component.html -->
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <!-- Sidebar -->
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-5 d-none d-sm-inline">Menu</span>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Clients</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                <li><a class="dropdown-item" routerLink="/admin/addClient">Add Client</a></li>
+                <li><a class="dropdown-item" routerLink="/admin/Client">show Clients</a></li>
+              </ul>
+            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Vehicule</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                <li><a class="dropdown-item" routerLink="/admin/addVehicule">Add Vehicule</a></li>
+                <li><a class="dropdown-item" routerLink="/admin/getVehicule">show Vehicules</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Ajoutez d'autres éléments de menu ici -->
+       
+        <hr>
+        <div class="dropdown pb-4">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+            <span class="d-none d-sm-inline mx-1">User</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logOut()">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+<!-- Single Page Header start -->
+<div class="container-fluid py-5">
+  <div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Liste des Clients</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+      <li class="breadcrumb-item active">Clients</li>
+    </ol>
+  </div>
+  <div class="container bootstrap snippets bootdey" id="getFeedTab">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+
+       
+                    <div class="table-responsive">
+                        
+                        <table class="table user-list">
+                            <thead>
+                              <tr>
+                                <th scope="col"><span>FirstName</span></th>
+                                <th scope="col"><span>LastName</span></th>
+                                <th scope="col"><span>Email</span></th>
+                                <th scope="col"><span>Phone</span></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let f of ClientTab">
+                                <!-- image and name user -->
+                                <td>
+                                  <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                  <a class="user-link">{{ f.firstName }}</a>
+                                </td>
+                           
+                                <!-- email user -->
+                                <td>
+                                  <a href="mailto:{{ f.email }}">{{ f.lastName }}</a>
+                                </td>
+                                <!-- feedback title  -->
+                                <td>{{ f.email }}</td>
+                                <!-- feedback title  -->
+                                <td>{{ f.phoneNumber }}</td>
+                                <!-- Actions -->
+                                <td style="width: 20%;">
+                                  <!-- yellow button -->
+                                  <a class="table-link text-warning"(click)="showCardDetails(f)">
+                                    <span class="fa-stack">
+                                      <i class="fa fa-square fa-stack-2x"></i>
+                                      <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                  </a>
+                                  <!-- update button -->
+                                   
+                                  <a class="table-link text-info" (click)=" updateClient(f.userID)">
+                                    <span class="fa-stack">
+                                      <i class="fa fa-square fa-stack-2x"></i>
+                                      <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                  </a>
+                                  <!-- delete button -->
+                                  <a class="table-link danger" (click)="deleteClient(f.userID)">
+                                    <span class="fa-stack">
+                                      <i class="fa fa-square fa-stack-2x"></i>
+                                      <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- Single Page Header End -->

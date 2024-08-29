@@ -1,0 +1,72 @@
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+  <h1 class="text-center text-white display-6"></h1>
+  <ol class="breadcrumb justify-content-center mb-0"></ol>
+</div>
+<!-- Single Page Header End -->
+<!-- Single Page Header start -->
+<div class="container-fluid py-5">
+  <div class="container bootstrap snippets bootdey" id="getFeedTab">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-box no-header clearfix">
+          <div class="main-box-body clearfix">
+            <div class="table-responsive">
+              <table class="table user-list">
+                <thead>
+                  <tr>
+                    <th scope="col"><span>FirstName</span></th>
+                    <th scope="col"><span>LastName</span></th>
+                    <th scope="col"><span>Email</span></th>
+                    <th scope="col"><span>Phone</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let f of ChauffeurTab">
+                    <td>
+                      <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                      <a class="user-link">{{ f.firstName }}</a>
+                    </td>
+                    <td>{{ f.lastName }}</td>
+                    <td>{{ f.email }}</td>
+                    <td>{{ f.phoneNumber }}</td>
+                    <td style="width: 20%;">
+                      <a class="table-link text-warning" (click)="showCardDetails(f)">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                      <a class="table-link text-info" (click)=" updateChauffeur(f.userID)">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                      <a class="table-link danger"  (click)="deleteChauffeur(f.userID)">
+                        <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x" ></i>
+                          <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                        </span>
+                   
+                      </a>
+                      <button 
+                      [ngClass]="{'btn-green': f.accepted, 'btn-red': !f.accepted}" 
+                      (click)="toggleAccepted(f.userID)">
+                      {{ f.accepted ? 'Accepted' : 'Accept' }}
+                  </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Single Page Header End -->

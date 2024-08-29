@@ -1,0 +1,85 @@
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Livraisons</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Livraisons</li>
+    </ol>
+  </div>
+  <!-- Single Page Header End -->
+  
+  <!-- Single Page Content start -->
+  <div class="container-fluid py-5">
+    <div class="container bootstrap snippets bootdey" id="getFeedTab">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-box no-header clearfix">
+            <div class="main-box-body clearfix">
+              <div class="table-responsive">
+                <table class="table user-list">
+                  <thead>
+                    <tr>
+                  
+                      <th scope="col">Status</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Paiement</th>
+                      <th scope="col">Date Commande</th>
+                      <th scope="col">Date Livraison</th>
+                      <th scope="col">Adresse Livraison</th>
+                      <th scope="col">Client </th>
+                      <th scope="col">Position</th>
+                      <th scope="col">Prix</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Chauffeur</th>
+                      <th scope="col">Véhicule </th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let livraison of OrderTab">
+                      
+                      <td>{{ livraison.status }}</td>
+                      <td>{{ livraison.type }}</td>
+                      <td>{{ livraison.paiement }}</td>
+                      <td>{{ livraison.dateCommande | date:'yyyy-MM-dd'  }}</td>
+                      <td>{{ livraison.dateLivraison | date:'yyyy-MM-dd' }}</td>
+                      <td>{{ livraison.adresseLivraison }}</td>
+                      <td>{{ livraison.clientFirstName }} </td>
+                      <td>{{ livraison.position }}</td>
+                      <td>{{ livraison.prix | currency }}</td>
+                      <td>{{ livraison.description }}</td>
+                      <td>{{ livraison.chaufFirstName }} </td>
+                      <td>{{ livraison.vehiculeMarques }} </td>
+                    
+                      <td style="width: 20%;">
+                        <a class="table-link text-warning" (click)="showLivraisonDetails(livraison)">
+                          <span class="fa-stack">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                        <a class="table-link text-info" (click)="updateLivraison(livraison.livraisonID)">
+                          <span class="fa-stack">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                        <a class="table-link danger" (click)="deleteLivraison(livraison.livraisonID)">
+                          <span class="fa-stack">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Single Page Content End -->
+  

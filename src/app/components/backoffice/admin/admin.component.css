@@ -1,0 +1,61 @@
+/* dashboard.component.css */
+.card {
+    border-radius: 8px; /* Arrondir les coins des cartes */
+  }
+  
+  .card-body {
+    padding: 20px; /* Ajouter du padding à l'intérieur des cartes */
+  }
+  
+  h1 {
+    font-size: 2rem; /* Taille de police pour le titre principal */
+  }
+  /* styles.css */
+.container {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem; /* Agrandir la taille du titre de la carte */
+    color: #333; /* Couleur du texte du titre */
+  }
+  
+  .card-text {
+    font-size: 1.25rem; /* Agrandir la taille du texte */
+    color: #555; /* Couleur du texte */
+  }
+  
+  .table {
+    font-size: 1.1rem; /* Agrandir la taille du texte dans le tableau */
+  }
+  
+  .table th, .table td {
+    padding: 1rem; /* Ajouter un peu de padding */
+  }
+  
+  .table thead th {
+    background-color: #007bff; /* Couleur de fond pour l'en-tête du tableau */
+    color: white; /* Couleur du texte pour l'en-tête du tableau */
+  }
+  
+  .table tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Couleur de fond des lignes impaires */
+  }
+  
+  .table tbody tr:nth-of-type(even) {
+    background-color: #e9ecef; /* Couleur de fond des lignes paires */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #d6d6d6; /* Couleur de fond au survol */
+  }
+  
+  .card {
+    border: 1px solid #ddd; /* Bordure des cartes */
+    border-radius: 0.5rem; /* Bord arrondi */
+  }
+  
+  .card-body {
+    padding: 2rem; /* Ajouter du padding dans la carte */
+  }
+  

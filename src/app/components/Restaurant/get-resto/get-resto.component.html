@@ -1,0 +1,49 @@
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+  <h1 class="text-center text-white display-6"></h1>
+  <ol class="breadcrumb justify-content-center mb-0"></ol>
+</div>
+<!-- Single Page Header End -->
+<!-- Single Page Header start -->
+<div class="container-fluid py-5">
+  <div class="container bootstrap snippets bootdey" id="getFeedTab">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-box no-header clearfix">
+          <div class="main-box-body clearfix">
+            <div class="container mt-5">
+                <div class="row">
+                  <div class="col-md-4" *ngFor="let f of RestoTab">
+                    <div class="card mb-4">
+                      <img src="https://bootdey.com/img/Content/user_1.jpg" class="card-img-top" alt="{{ f.firstName }}">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">{{ f.firstName }}</h5>
+                        <p class="card-text">{{ f.address }}</p>
+                        <p class="card-text">+216 {{ f.phoneNumber }}</p>
+                        <div class="btn-group" role="group" aria-label="Basic example"(click)="showCardDetails(f)">
+                          <button type="button" class="btn btn-warning" >
+                            <i class="fa fa-search-plus"></i>
+                          </button>
+                          <button type="button" class="btn btn-info"(click)="updateResto(f.userID)">
+                            <i class="fa fa-pencil"></i>
+                          </button>
+                          <button type="button" class="btn btn-danger" (click)="deleteResto(f.userID)">
+                            <i class="fa fa-trash-o"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Single Page Header End -->

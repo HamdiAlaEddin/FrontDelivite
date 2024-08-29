@@ -1,0 +1,93 @@
+<!-- app.component.html -->
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <!-- Sidebar -->
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-5 d-none d-sm-inline">Menu</span>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li>
+            <a routerLink="/admin/Client" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+            </a>
+          </li>
+          <!-- Ajoutez d'autres éléments de menu ici -->
+        </ul>
+        <hr>
+        <div class="dropdown pb-4">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+            <span class="d-none d-sm-inline mx-1">User</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logOut()">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<div class="container">
+    <h1 class="my-4">Dashboard</h1>
+    
+    <!-- Exemple de contenu pour le Dashboard -->
+    <div class="container-fluid py-5">
+      <div class="container bootstrap snippets bootdey" id="getFeedTab">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+              <div class="main-box-body clearfix">
+                <div class="table-responsive">
+                  <table class="table user-list">
+                    <thead>
+                      <tr>
+                        <th scope="col"><span>FirstName</span></th>
+                        <th scope="col"><span>LastName</span></th>
+                        <th scope="col"><span>Email</span></th>
+                        <th scope="col"><span>Phone</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let f of AdminTab">
+                        <td>
+                          <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                          <a class="user-link">{{ f.firstName }}</a>
+                        </td>
+                        <td>{{ f.lastName }}</td>
+                        <td>{{ f.email }}</td>
+                        <td>{{ f.phoneNumber }}</td>
+                        <td style="width: 20%;">
+                          <a class="table-link text-warning" (click)="showCardDetails(f)" >
+                            <span class="fa-stack">
+                              <i class="fa fa-square fa-stack-2x"></i>
+                              <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                            </span>
+                          </a>
+                          <a class="table-link text-info"  (click)="updateAdmin(f.userID)" >
+                            <span class="fa-stack">
+                              <i class="fa fa-square fa-stack-2x"></i>
+                              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                            </span>
+                          </a>
+                          <a class="table-link danger" (click)="deleteAdmin(f.userID)" >
+                            <span class="fa-stack">
+                              <i class="fa fa-square fa-stack-2x" ></i>
+                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                            </span>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        

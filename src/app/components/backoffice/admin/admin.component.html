@@ -1,0 +1,129 @@
+<!-- app.component.html -->
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+      <!-- Sidebar -->
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+          <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-5 d-none d-sm-inline">Menu</span>
+          </a>
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Clients</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/addClient">Add Client</a></li>
+                  <li><a class="dropdown-item" routerLink="/admin/Client">show Clients</a></li>
+                </ul>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Vehicule</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/addVehicule">Add Vehicule</a></li>
+                  <li><a class="dropdown-item" routerLink="/admin/getVehicule">show Vehicules</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!-- Ajoutez d'autres éléments de menu ici -->
+         
+          <hr>
+          <div class="dropdown pb-4">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+              <span class="d-none d-sm-inline mx-1">User</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" (click)="logOut()">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  <div class="container">
+      <h1 class="my-4">Dashboard</h1>
+      
+      <!-- Exemple de contenu pour le Dashboard -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Total Orders</h5>
+              <p class="card-text">You have 1234 orders in total.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Total Revenue</h5>
+              <p class="card-text">Your total revenue is $5678.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Nouveau Bloc pour le Nombre de Voitures -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Total Cars</h5>
+              <p class="card-text">You have 50 cars in total.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Gender Comparison</h5>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Gender</th>
+                    <th>Count</th>
+                    <th>Percentage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background-color: #f8d7da;">
+                    <td>Male</td>
+                    <td>500</td>
+                    <td>60%</td>
+                  </tr>
+                  <tr style="background-color: #d3ecf1;">
+                    <td>Female</td>
+                    <td>300</td>
+                    <td>40%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Active Drivers</h5>
+            <p class="card-text">There are currently 20 active drivers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Successful Deliveries</h5>
+            <p class="card-text">You have successfully completed 789 deliveries.</p>
+          </div>
+        </div>
+      </div>
+          
