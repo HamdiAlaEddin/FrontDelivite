@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
 @Injectable({
@@ -9,17 +10,23 @@ export class WebSocketService {
   
 
   constructor(private stompClient: Stomp.Client) {
-    this.initializeWebSocketConnection();
+    this.connect();
   }
 
-  private initializeWebSocketConnection() {
-    const socket = new SockJS('http://localhost:8080/notifications'); // Remplacez l'URL par celle de votre serveur
+  private connect() {
+    const socket = new SockJS('http://localhost:9090/notifications');
     this.stompClient = Stomp.over(socket);
-    this.stompClient.connect({}, (frame) => {
+    this.stompClient.connect({}, frame => {
       console.log('Connected: ' + frame);
-      this.stompClient.subscribe('/topic/notifications', (message) => {
-        console.log('Notification received:', message.body);
-        // Ajoutez ici la logique pour traiter et afficher la notification
+    });
+  }
+
+  public subscribeToNotifications(): Observable<string> {
+    return new Observable(observer => {
+      this.stompClient.connect({}, frame => {
+        this.stompClient.subscribe('/topic/notifications', message => {
+          observer.next(message.body);
+        });
       });
     });
   }

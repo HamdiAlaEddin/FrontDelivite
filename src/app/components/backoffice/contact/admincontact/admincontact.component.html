@@ -98,72 +98,79 @@
       </div>
     </div>
     
-<!-- Single Page Header End -->
+<!-- Single Page Header start -->
 <div class="container-fluid py-5">
   <div class="container-fluid page-header py-5">
-    <h1 class="text-center text-white display-6">Liste des Chauffeurs</h1>
+    <h1 class="text-center text-white display-6">Liste des Contacts</h1>
     <ol class="breadcrumb justify-content-center mb-0">
-      <li class="breadcrumb-item active">Chauffeurs</li>
+      <li class="breadcrumb-item active">Messages</li>
     </ol>
   </div>
   <div class="container bootstrap snippets bootdey" id="getFeedTab">
     <div class="row">
-      <div class="col-lg-12">
-        <div class="main-box no-header clearfix">
-          <div class="main-box-body clearfix">
-            <div class="table-responsive">
-              <table class="table user-list">
-                <thead>
-                  <tr>
-                    <th scope="col"><span>FirstName</span></th>
-                    <th scope="col"><span>LastName</span></th>
-                    <th scope="col"><span>Email</span></th>
-                    <th scope="col"><span>Phone</span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let f of ChauffeurTab">
-                    <td>
-                      <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
-                      <a class="user-link">{{ f.firstName }}</a>
-                    </td>
-                    <td>{{ f.lastName }}</td>
-                    <td>{{ f.email }}</td>
-                    <td>{{ f.phoneNumber }}</td>
-                    <td style="width: 20%;">
-                      <a class="table-link text-warning" (click)="showCardDetails(f)">
-                        <span class="fa-stack">
-                          <i class="fa fa-square fa-stack-2x"></i>
-                          <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                        </span>
-                      </a>
-                      <a class="table-link text-info" (click)="updateChauffeur(f.userID)">
-                        <span class="fa-stack">
-                          <i class="fa fa-square fa-stack-2x"></i>
-                          <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                        </span>
-                      </a>
-                      <a class="table-link danger"  (click)="deleteChauffeur(f.userID)">
-                        <span class="fa-stack">
-                          <i class="fa fa-square fa-stack-2x" ></i>
-                          <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                        </span>
-                   
-                      </a>
-                      <button 
-                      [ngClass]="{'btn-green': f.accepted, 'btn-red': !f.accepted}" 
-                      (click)="toggleAccepted(f.userID)">
-                      {{ f.accepted ? 'Accepted' : 'Accept' }}
-                  </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+
+       
+                    <div class="table-responsive">
+                        
+                        <table class="table user-list">
+                            <thead>
+                              <tr>
+                                <th scope="col"><span>Name</span></th>
+                                <th scope="col"><span>Message</span></th>
+                                <th scope="col"><span>Email</span></th>
+                                <th scope="col"><span>date</span></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let c of ContactTab">
+                                <!-- image and name user -->
+                                <td>
+                                  <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                  <a class="user-link">{{c.name }}</a>
+                                </td>
+                           
+                                <!-- email user -->
+                                <td>
+                                  <a >{{c.message}}</a>
+                                </td>
+                                <!-- feedback title  -->
+                                <td>{{ c.mail }}</td>
+                                <!-- feedback title  -->
+                                <td>{{c.date }}</td>
+                                <!-- Actions -->
+                                <td style="width: 20%;">
+                                 
+                                 
+                                  <!-- update button
+                                   
+                                  <a class="table-link text-info" (click)=" updateClient(f.userID)">
+                                    <span class="fa-stack">
+                                      <i class="fa fa-square fa-stack-2x"></i>
+                                      <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                  </a>
+                         delete button  -->
+                                  <a class="table-link danger" (click)="deleteContact(c.id_Contact)">
+                                    <span class="fa-stack">
+                                      <i class="fa fa-square fa-stack-2x"></i>
+                                      <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                 
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+
 </div>
 <!-- Single Page Header End -->

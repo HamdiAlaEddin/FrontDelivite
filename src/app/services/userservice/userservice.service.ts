@@ -200,21 +200,27 @@ acceptChauffeur(id: number): Observable<any> {
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 async getCurrentUser(): Promise<User | undefined> {
-  if(this.isLoggedIn()){
+  if (this.isLoggedIn()) {
     try {
-      const response = await this.httpClient.post<any>(this.URL + "/getbytoken", sessionStorage.getItem('token')).toPromise();
-      console.log(response);
-      return response;
+        const token = sessionStorage.getItem('token');
+        console.log('Token retrieved:', token);
+        if (!token) {
+            throw new Error('Token is missing');
+        }
+
+        // Envoyer la requête POST avec le payload approprié
+        const response = await this.httpClient.post<any>(this.URL + "/getbytoken", { token }).toPromise();
+        console.log('Response received:', response);
+        return response;
     } catch (error) {
-      console.log(error);
-      if (error instanceof HttpErrorResponse && error.status === 403) {
-        this.logout();
-        //this.showLoginPopup();
-      }
-      return undefined;
+        console.log('Error during getCurrentUser:', error);
+        if (error instanceof HttpErrorResponse && error.status === 403) {
+            this.logout();
+        }
+        return undefined;
     }
-  }
-  return undefined;
+}
+return undefined;
 }
 
 getToken(){

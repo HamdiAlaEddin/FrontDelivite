@@ -33,6 +33,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { VehicComponent } from './components/backoffice/vehic/vehic.component';
+import { HistorilogComponent } from './components/backoffice/historique/historilog/historilog.component';
+import { AdmincontactComponent } from './components/backoffice/contact/admincontact/admincontact.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { VehicComponent } from './components/backoffice/vehic/vehic.component';
     RegisterChauffeurComponent,
     RegisterRestoComponent,
   AdminComponent,
-  VehicComponent
+  VehicComponent,
+  HistorilogComponent,
+  AdmincontactComponent
   
   ],
   imports: [

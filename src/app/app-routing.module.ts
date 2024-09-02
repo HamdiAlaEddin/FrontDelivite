@@ -25,6 +25,9 @@ import { RoleComponent } from './components/login/role/role.component';
 import { AuthGuard } from './auth.guard';
 import { AdminComponent } from './components/backoffice/admin/admin.component';
 import { StatisticComponent } from './components/backoffice/statistic/statistic.component';
+import { VehicComponent } from './components/backoffice/vehic/vehic.component';
+import { HistorilogComponent } from './components/backoffice/historique/historilog/historilog.component';
+import { AdmincontactComponent } from './components/backoffice/contact/admincontact/admincontact.component';
 
 
 
@@ -65,8 +68,9 @@ const routes: Routes = [
 //{path:'admin', component:AdminComponent},
 
 {path:'admin/Clientstat', component:StatisticComponent},
-
-
+{path:'admin/order', component:VehicComponent},
+{path:'admin/contact', component:AdmincontactComponent},
+{path:'admin/logs', component:HistorilogComponent},
   {path:'**', component:NotFoundComponent},
 
 ];

@@ -1,4 +1,4 @@
-export interface Commandedto {
+export interface LivraisonDto {
     livraisonID: number;
     status: string;
     type: string;
@@ -7,11 +7,11 @@ export interface Commandedto {
     dateLivraison: Date;
     adresseLivraison: string;
     clientFirstName: string;
-    telclient: string;
+    clientPhone: string;
     position: string;
     prix: number;
     description: string;
     chaufFirstName: string;
-    telchauf: string;
-   
-  }
+    chaufPhone: string;
+    vehiculeDetails: string;
+}
