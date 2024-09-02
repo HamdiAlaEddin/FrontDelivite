@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Commandedto } from 'src/app/models/CommandeDto';
 import { Livraison } from 'src/app/models/Livraison';
 import { LivraisonDto } from 'src/app/models/livraisonDto';
+import { LogHistorique } from 'src/app/models/LogHistorique';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,11 @@ export class LivraisonserviceService {
   }
   deleteLivraison(ID : number){
     return this.httpClient.delete(`${this.URL}/deleteLivraison/${ID}`);
+  }
+  getAllLogs(): Observable<LogHistorique[]> {
+    return this.httpClient.get<LogHistorique[]>(`${this.URL}/getallLogsHistorique`);
+  }
+  deleteLog(ID : number){
+    return this.httpClient.delete(`${this.URL}/deleteLogHistorique/${ID}`);
   }
 }

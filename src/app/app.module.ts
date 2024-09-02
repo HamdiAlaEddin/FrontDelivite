@@ -35,6 +35,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { VehicComponent } from './components/backoffice/vehic/vehic.component';
 import { HistorilogComponent } from './components/backoffice/historique/historilog/historilog.component';
 import { AdmincontactComponent } from './components/backoffice/contact/admincontact/admincontact.component';
+import { PubliciteComponent } from './components/client/publicite/publicite/publicite.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { AdmincontactComponent } from './components/backoffice/contact/admincont
   AdminComponent,
   VehicComponent,
   HistorilogComponent,
-  AdmincontactComponent
+  AdmincontactComponent,
+  PubliciteComponent
   
   ],
   imports: [

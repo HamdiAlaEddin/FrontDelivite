@@ -1,0 +1,43 @@
+/* Style général des cartes */
+.card {
+    border: none; /* Supprimer la bordure par défaut pour un design plus propre */
+    border-radius: 10px; /* Coins arrondis pour un look moderne */
+    display: flex;
+    flex-direction: column; /* Disposer les éléments en colonne */
+    height: 100%; /* Assurer que la carte prend toute la hauteur disponible */
+  }
+  
+  /* Style pour le contenu de la carte */
+  .card-body {
+    display: flex;
+    flex-direction: column; /* Disposer les éléments en colonne */
+    justify-content: space-between; /* Espacer les éléments pour que l'icône soit en bas */
+    align-items: center; /* Centrer les éléments horizontalement */
+    text-align: center; /* Aligner le texte au centre */
+    padding: 20px; /* Espacement interne */
+  }
+  
+  /* Style pour les icônes dans les cartes */
+  .card-body i {
+    font-size: 3rem; /* Taille des icônes */
+  }
+  
+  /* Marges pour le texte */
+  .card-title {
+    margin-top: 10px; /* Espacement au-dessus du titre */
+  }
+  
+  .card-text {
+    margin-top: 5px; /* Espacement au-dessus du texte */
+  }
+  
+  /* Style pour les badges dans le tableau */
+  .badge {
+    font-size: 0.9rem; /* Taille de police légèrement réduite */
+  }
+  
+  /* Espacement entre les colonnes du tableau */
+  .table td, .table th {
+    vertical-align: middle; /* Alignement vertical au milieu */
+  }
+  

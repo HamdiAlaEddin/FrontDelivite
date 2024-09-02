@@ -1,1 +1,177 @@
-<p>historilog works!</p>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<!-- app.component.html -->
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <!-- Sidebar -->
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a href="/admin" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-5 d-none d-sm-inline">Menu</span>
+        </a>
+         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Clients</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/addClient">Add Client</a></li>
+                  <li><a class="dropdown-item" routerLink="/admin/Client">show Clients</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Admins</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/addAdmin">Add Admin</a></li>
+                  <li><a class="dropdown-item" routerLink="/admin/Admin">show Admins</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Drivers</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/addDriver">Add Driver</a></li>
+                  <li><a class="dropdown-item" routerLink="/admin/Drivers">show Drivers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Restaurants</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/addRestaurant">Add Restaurant</a></li>
+                  <li><a class="dropdown-item" routerLink="/admin/Restaurants">show Restaurants</a></li>
+                </ul>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Vehicule</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/addVehicule">Add Vehicule</a></li>
+                  <li><a class="dropdown-item" routerLink="/admin/getVehicule">show Vehicules</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Orders</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/order">show Orders</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Historique</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/logs">show Historique</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle px-0 align-middle"  id="vehiculeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Contact</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="vehiculeDropdown">
+                  <li><a class="dropdown-item" routerLink="/admin/contact">show Message</a></li>
+                </ul>
+              </li>
+            </ul>
+          <!-- Ajoutez d'autres éléments de menu ici -->
+       
+        <hr>
+        <div class="dropdown pb-4">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+            <span class="d-none d-sm-inline mx-1">User</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="logOut()">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+<!-- log-list.component.html -->
+<div class="container-fluid py-5">
+    <div class="container-fluid page-header py-5">
+      <h1 class="text-center text-white display-6">Liste des Logs Historiques</h1>
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item active">Logs</li>
+      </ol>
+    </div>
+    <div class="container bootstrap snippets bootdey" id="getFeedTab">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-box no-header clearfix">
+            <div class="main-box-body clearfix">
+              <div class="table-responsive">
+                <table class="table user-list">
+                    <thead>
+                      <tr>
+                        <th scope="col"><span>Description</span></th>
+                        <th scope="col"><span>Incident</span></th>
+                        <th scope="col"><span>Livraison ID</span></th>
+                        <th scope="col"><span>Vehicule ID</span></th>
+                        <th scope="col"><span>Actions</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Log pour incident de panne</td>
+                        <td>Enpanne</td>
+                        <td>101</td>
+                        <td>201</td>
+                        <td style="width: 20%;">
+                          <a class="table-link danger" (click)="deleteLog(1)">
+                            <span class="fa-stack">
+                              <i class="fa fa-square fa-stack-2x"></i>
+                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                            </span>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Log pour accident sur la route</td>
+                        <td>Accident</td>
+                        <td>102</td>
+                        <td>202</td>
+                        <td style="width: 20%;">
+                          <a class="table-link danger" (click)="deleteLog(2)">
+                            <span class="fa-stack">
+                              <i class="fa fa-square fa-stack-2x"></i>
+                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                            </span>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Log pour livraison détruite</td>
+                        <td>LivraisonDetruite</td>
+                        <td>103</td>
+                        <td>203</td>
+                        <td style="width: 20%;">
+                          <a class="table-link danger" (click)="deleteLog(3)">
+                            <span class="fa-stack">
+                              <i class="fa fa-square fa-stack-2x"></i>
+                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                            </span>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

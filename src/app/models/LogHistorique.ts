@@ -8,4 +8,5 @@ export interface LogHistorique {
     incident: Incident;
     livr: Livraison; // Relation avec Livraison
     vehic: Vehicule; // Relation avec Vehicule
+  
   }

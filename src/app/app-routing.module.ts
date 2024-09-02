@@ -28,6 +28,7 @@ import { StatisticComponent } from './components/backoffice/statistic/statistic.
 import { VehicComponent } from './components/backoffice/vehic/vehic.component';
 import { HistorilogComponent } from './components/backoffice/historique/historilog/historilog.component';
 import { AdmincontactComponent } from './components/backoffice/contact/admincontact/admincontact.component';
+import { PubliciteComponent } from './components/client/publicite/publicite/publicite.component';
 
 
 
@@ -45,6 +46,7 @@ const routes: Routes = [
     canActivate: [AuthGuard], 
   },
   //{path:'user', component:HomeComponent},
+  {path:'info', component:PubliciteComponent},
   {path:'contact', component:ContactComponent},
   {path:'maps', component:MapsComponent},
   { path: 'resetpassword/:token', component: ResetPasswordComponent },
