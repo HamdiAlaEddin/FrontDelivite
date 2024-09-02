@@ -1,34 +1,53 @@
+/* Styles pour la page */
+.page-header {
+  padding: 40px 0;
+  background-image: url('aa.jpg'); /* Ajouter votre image de fond */
+  background-size: cover; /* Couvrir toute la section */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  color: #fff; /* Texte blanc pour contraster avec l'image de fond *//* Fond clair pour la section */
+}
+.container {
+  position: relative; /* Assurer que les cartes sont positionnées relativement à leur conteneur */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 1; /* Assurer que les cartes sont au-dessus de l'image de fond */
+}
 
+.row {
+  margin: 0 auto;
+}
 
-
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-
-  
-  .container {
-    position: absolute; /* Positionner les cartes sur l'image */
-    bottom: 30px; /* Espacement depuis le bas de la page */
-    left: 50%;
-    transform: translateX(-50%); /* Centrer les cartes horizontalement */
-  }
-  
-  .row {
-    display: flex;
-    justify-content: center; /* Centrer les cartes horizontalement */
-  }
-  
-  .card {
-    margin: 28px;
+.card {
+  display: flex;
+    flex-direction: column;
+    height: 100%; /* Assurer que toutes les cartes aient la même hauteur */
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent pour les cartes */
+    background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-img-top {
-    height: 200px; /* Ajuster la hauteur de l'image dans la carte */
-    object-fit: cover;
-  }
-  
+    overflow: hidden; /* Empêcher le débordement */
+}
+
+.card-img-top {
+  height: 180px; /* Ajustez la hauteur si nécessaire */
+  object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
+  width: 100%; /* Assure que l'image occupe toute la largeur de la carte */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
