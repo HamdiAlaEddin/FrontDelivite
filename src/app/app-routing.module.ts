@@ -29,6 +29,7 @@ import { VehicComponent } from './components/backoffice/vehic/vehic.component';
 import { HistorilogComponent } from './components/backoffice/historique/historilog/historilog.component';
 import { AdmincontactComponent } from './components/backoffice/contact/admincontact/admincontact.component';
 import { PubliciteComponent } from './components/client/publicite/publicite/publicite.component';
+import { RestoclientComponent } from './components/Restaurant/restoclient/restoclient.component';
 
 
 
@@ -67,7 +68,7 @@ const routes: Routes = [
   {path:'admin/Restaurants', component:GetRestoComponent},
   {path:'getOrders', component:GetLivraisonComponent},
 //test pour l admin
-//{path:'admin', component:AdminComponent},
+{path:'Restaurants', component:RestoclientComponent},
 
 {path:'admin/Clientstat', component:StatisticComponent},
 {path:'admin/order', component:VehicComponent},

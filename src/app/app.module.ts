@@ -36,6 +36,7 @@ import { VehicComponent } from './components/backoffice/vehic/vehic.component';
 import { HistorilogComponent } from './components/backoffice/historique/historilog/historilog.component';
 import { AdmincontactComponent } from './components/backoffice/contact/admincontact/admincontact.component';
 import { PubliciteComponent } from './components/client/publicite/publicite/publicite.component';
+import { RestoclientComponent } from './components/Restaurant/restoclient/restoclient.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { PubliciteComponent } from './components/client/publicite/publicite/publ
   VehicComponent,
   HistorilogComponent,
   AdmincontactComponent,
-  PubliciteComponent
+  PubliciteComponent,
+  RestoclientComponent
   
   ],
   imports: [
